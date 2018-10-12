@@ -8,7 +8,21 @@
 
 
 // DOCUMENT READY FUNCTION BELOW
-$("#shoot").click(function()
-{
-    $("#userChoice").text($("#input").val());
-})
+var userChoice = "";
+var computerChoices = ["rock","paper","scissors"];
+var computerChoice = "";
+var winner = "";
+
+
+
+
+
+
+    $("#shoot").click(function()
+    {
+        userChoice = $("#input").val();
+        computerChoice = Math.floor(Math.random()*computerChoices.length);
+        $("#userChoice").text(userChoice);
+        $("#computerChoice").text(computerChoices[computerChoice]);
+    });
+

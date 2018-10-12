@@ -10,11 +10,11 @@ In this unit, coders will create a Rock, Paper, Scissors game. The Rock, Paper, 
 #### Set-Up
 - [x] Go to the repository at https://github.com/ScriptEdcurriculum/rockpaperscissors
 - [x] Fork this repository to your github account and clone to a new workspace
-- [ ] Add, commit, and push your changes
+- [x] Add, commit, and push your changes
 - [ ] Make your site live on gh-pages
 
 ### HTML
-- [ ] Add any more HTML elements you will need to the page
+- [x] Add any more HTML elements you will need to the page
 
 ### JavaScript
 - [ ] Add a click handler that displays the value of the input within the div with the id `#userChoice`

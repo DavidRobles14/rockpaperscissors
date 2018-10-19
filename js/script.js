@@ -9,9 +9,13 @@
 
 // DOCUMENT READY FUNCTION BELOW
 var userChoice = "";
-var computerChoices = ["rock","paper","scissors"];
+var input = "";
+var computerChoices = ["rock","paper","scissors","Lizard","Spock"];
 var computerChoice = "";
 var winner = "";
+var name = "";
+var wins = 1;
+var losses = "";
 
 
 
@@ -21,29 +25,46 @@ var winner = "";
 
     $("#shoot").click(function()
     {
-        userChoice = $("#input").val();
+        name = $("#name").val();
+        input = $("#input").val();
+        userChoice = input.toLowerCase();
         computerChoice = Math.floor(Math.random()*computerChoices.length);
         $("#userChoice").text(userChoice);
         $("#computerChoice").text(computerChoices[computerChoice]);
         $("#input").val("");
-        if(userChoice == "rock" || userChoice == "paper" || userChoice == "scissors")
+        if(userChoice == "rock" || userChoice == "paper" || userChoice == "scissors" || userChoice == "lizard" || userChoice == "Spoke")
         {
-            if(userChoice == "rock" && computerChoices[computerChoice] == "scissors" || userChoice == "paper" && computerChoices[computerChoice] == "rock" || userChoice == "scissors" && computerChoices[computerChoice] == "paper")
+            if(userChoice == "rock" && computerChoices[computerChoice] == "scissors" || userChoice == "rock" && computerChoices[computerChoice] == "lizard" || userChoice == "paper" && computerChoices[computerChoice] == "rock" || userChoice == "paper" && computerChoices[computerChoice] == "spock" || userChoice == "scissors" && computerChoices[computerChoice] == "paper" || userChoice == "scissors" && computerChoices[computerChoice] == "lizard" || userChoice == "lizard" && computerChoices[computerChoice] == "spock" || userChoice == "lizard" && computerChoices[computerChoice] == "paper" || userChoice == "spock" && computerChoices[computerChoice] == "scissors" || userChoice == "spock" && computerChoices[computerChoice] == "rock")
             {
-                winner = name;
-                $("#winner").text(winner);
+                if(name == "")
+                {
+                    winner = "user";
+                    $("#winner").text(winner);
+                    wins += wins;
+                    $("#wins").text(wins);
+                }
+                else
+                {
+                    winner = name;
+                    $("#winner").text(winner);
+                    wins += wins;
+                    $("#wins").text(wins);
+                }
             }
-            if(userChoice == "rock" && computerChoices[computerChoice] == "paper" || userChoice == "paper" && computerChoices[computerChoice] == "scissors" || userChoice == "scissors" && computerChoices[computerChoice] == "rock")
+            else if(userChoice == "rock" && computerChoices[computerChoice] == "paper" || userChoice == "rock" && computerChoices[computerChoice] == "spock" || userChoice == "paper" && computerChoices[computerChoice] == "scissors" || userChoice == "paper" && computerChoices[computerChoice] == "lizard" || userChoice == "scissors" && computerChoices[computerChoice] == "rock" || userChoice == "scissors" && computerChoices[computerChoice] == "spock" || userChoice == "lizard" && computerChoices[computerChoice] == "rock" || userChoice == "lizard" && computerChoices[computerChoice] == "scissors" || userChoice == "spock" && computerChoices[computerChoice] == "lizard" || userChoice == "spock" && computerChoices[computerChoice] == "paper")
             {
                 winner = "Computer";
                 $("#winner").text(winner);
             }
-            if(userChoice == "rock" && computerChoices[computerChoice] == "rock" || userChoice == "paper" && computerChoices[computerChoice] == "paper" || userChoice == "scissors" && computerChoices[computerChoice] == "scissors")
+            else if(userChoice == "rock" && computerChoices[computerChoice] == "rock" || userChoice == "paper" && computerChoices[computerChoice] == "paper" || userChoice == "scissors" && computerChoices[computerChoice] == "scissors" || userChoice == "lizard" && computerChoices[computerChoice] == "lizard" || userChoice == "spock" && computerChoices[computerChoice] == "spock") 
             {
                 winner = "neither";
                 $("#winner").text(winner);
+                losses += losses;
+                $("#losses").text(losses);
             }
         }
+        
         else
         {
             winner = "ERROR";

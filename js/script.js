@@ -10,12 +10,12 @@
 // DOCUMENT READY FUNCTION BELOW
 var userChoice = "";
 var input = "";
-var computerChoices = ["rock","paper","scissors","Lizard","Spock"];
+var computerChoices = ["rock","paper","scissors","lizard","spock"];
 var computerChoice = "";
 var winner = "";
 var name = "";
-var wins = 1;
-var losses = "";
+var wins = 0;
+var losses = 0;
 
 
 
@@ -34,20 +34,24 @@ var losses = "";
         $("#input").val("");
         if(userChoice == "rock" || userChoice == "paper" || userChoice == "scissors" || userChoice == "lizard" || userChoice == "Spoke")
         {
-            if(userChoice == "rock" && computerChoices[computerChoice] == "scissors" || userChoice == "rock" && computerChoices[computerChoice] == "lizard" || userChoice == "paper" && computerChoices[computerChoice] == "rock" || userChoice == "paper" && computerChoices[computerChoice] == "spock" || userChoice == "scissors" && computerChoices[computerChoice] == "paper" || userChoice == "scissors" && computerChoices[computerChoice] == "lizard" || userChoice == "lizard" && computerChoices[computerChoice] == "spock" || userChoice == "lizard" && computerChoices[computerChoice] == "paper" || userChoice == "spock" && computerChoices[computerChoice] == "scissors" || userChoice == "spock" && computerChoices[computerChoice] == "rock")
+            if(userChoice == "rock" && computerChoices[computerChoice] == "scissors" || userChoice == "rock" && computerChoices[computerChoice] == "lizard"
+            || userChoice == "paper" && computerChoices[computerChoice] == "rock" || userChoice == "paper" && computerChoices[computerChoice] == "spock" 
+            || userChoice == "scissors" && computerChoices[computerChoice] == "paper" || userChoice == "scissors" && computerChoices[computerChoice] == "lizard" 
+            || userChoice == "lizard" && computerChoices[computerChoice] == "spock" || userChoice == "lizard" && computerChoices[computerChoice] == "paper" 
+            || userChoice == "spock" && computerChoices[computerChoice] == "scissors" || userChoice == "spock" && computerChoices[computerChoice] == "rock")
             {
                 if(name == "")
                 {
                     winner = "user";
                     $("#winner").text(winner);
-                    wins += wins;
+                    wins = wins + 1;
                     $("#wins").text(wins);
                 }
                 else
                 {
                     winner = name;
                     $("#winner").text(winner);
-                    wins += wins;
+                    wins = wins + 1;
                     $("#wins").text(wins);
                 }
             }
@@ -55,12 +59,14 @@ var losses = "";
             {
                 winner = "Computer";
                 $("#winner").text(winner);
+                losses = losses + 1;
+                $("#losses").text(losses);
             }
             else if(userChoice == "rock" && computerChoices[computerChoice] == "rock" || userChoice == "paper" && computerChoices[computerChoice] == "paper" || userChoice == "scissors" && computerChoices[computerChoice] == "scissors" || userChoice == "lizard" && computerChoices[computerChoice] == "lizard" || userChoice == "spock" && computerChoices[computerChoice] == "spock") 
             {
                 winner = "neither";
                 $("#winner").text(winner);
-                losses += losses;
+                losses = losses + 1;
                 $("#losses").text(losses);
             }
         }

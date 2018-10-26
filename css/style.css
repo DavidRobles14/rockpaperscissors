@@ -10,3 +10,19 @@
 img{
   height:300px;
 }
+
+body{
+  background-color:purple;
+}
+
+#name{
+  border-radius:10px;
+}
+
+#input{
+  border-radius:10px;
+}
+
+#shoot{
+  border-radius:10px;
+}

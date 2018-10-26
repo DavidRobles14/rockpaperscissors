@@ -32,7 +32,7 @@ var losses = 0;
         $("#userChoice").text(userChoice);
         $("#computerChoice").text(computerChoices[computerChoice]);
         $("#input").val("");
-        if(userChoice == "rock" || userChoice == "paper" || userChoice == "scissors" || userChoice == "lizard" || userChoice == "Spoke")
+        if(userChoice == "rock" || userChoice == "paper" || userChoice == "scissors" || userChoice == "lizard" || userChoice == "spock")
         {
             if(userChoice == "rock" && computerChoices[computerChoice] == "scissors" || userChoice == "rock" && computerChoices[computerChoice] == "lizard"
             || userChoice == "paper" && computerChoices[computerChoice] == "rock" || userChoice == "paper" && computerChoices[computerChoice] == "spock" 
@@ -66,8 +66,6 @@ var losses = 0;
             {
                 winner = "neither";
                 $("#winner").text(winner);
-                losses = losses + 1;
-                $("#losses").text(losses);
             }
         }
         
